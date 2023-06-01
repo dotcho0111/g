@@ -1,0 +1,337 @@
+Szoftverfejlesztő- és tesztelő jegyzetek
+------------------C#------------------
+------------------1. konzol------------------
+---Fájlból adatok beolvasása:
+List<adat> Lista=new List<adat>();
+
+string[] sorok = File.ReadAllLines(@"fájl helye");
+
+foreach (var sor in sorok.Skip(1)) //skip ha van fejléc
+{
+    Lista.Add(new adat(sor));
+}
+---osztályt létrehozás:
+//Program -> Add -> New item... -> Class -> név.cs
+//namespacen belul
+public class adat //ha a feladat keri, akkor private
+    {
+        string nev;
+        DateTime datum;
+        string egyeb;
+        int? szam;
+	//tipusnev utan ?, ha nem minden helyen van megadva az adat
+        public adat(string sor)
+        {
+            string[] darabol = sor.Split(';'); //split az elválasztó jel alapján
+            nev = darabol[0];
+            egyeb = darabol[2];
+            if (darabol[3]!="")
+            {
+                szam = int.Parse(darabol[3]); //kerdojel nélkül csak ez a sor kell az egyeb utan, if nem szukseges
+            }
+            else
+            {
+                szam = null;
+            }
+            darabol = darabol[1].Split('.');
+            datum = new DateTime(int.Parse(darabol[0]), int.Parse(darabol[1]), int.Parse(darabol[2])); //datum elvalasztasa a datum elvalasztojele szerint
+        }
+	//OOP egységbe zárás, get/set
+        public string Nev
+        {
+            get { return nev; }
+            set { nev = value; }
+        }
+        public DateTime Datum
+        {
+            get { return datum; }
+            set { datum = value; }
+        }
+        public string Egyeb
+        {
+            get { return egyeb; }
+            set
+            {
+                egyeb = value;
+            }
+        }
+        public int? Szam //?-re vonatkozo resz figyelembe vetele!
+        {
+            get { return szam; }
+            set
+            {
+                szam = value;
+            }
+        }
+    }
+
+
+---adatbázis készítése fájblól, aztán listából
+            string connentionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=dbnev;";
+            MySqlConnection databaseConnection = new MySqlConnection(connentionString);
+            databaseConnection.Open();
+            MySqlCommand adat = databaseConnection.CreateCommand();
+
+            foreach (var item in Lista)
+            {
+                adat.CommandText = "INSERT INTO `dbtabla`(`nev`, `datum`, `egyeb`, `szam`) VALUES ('" + item.Nev + "','" + item.Datum.ToString() + "','" + item.Egyeb + "','" + item.Datum.ToString() + "')";
+                adat.ExecuteNonQuery();
+            }
+            databaseConnection.Close();
+
+
+---dictionary
+Dictionary<string, int> szotar = new Dictionary<string, int>();
+            for (int i = 0; i < Lista.Count; i++)
+            {
+                if (szotar.ContainsKey(Lista[i].Szam))
+                {
+                    szotar[Lista[i].Szam] += 1;
+                }
+                else
+                {
+                    szotar.Add(Lista[i].Szam, 1);
+                }
+            }
+            foreach (var item in szotar)
+            {
+                if (item.Value > 20)
+                {
+                    Console.WriteLine($"\t{item.Key}: {item.Value}");
+                }
+            }
+
+---konstruktor
+
+Ctrl + . -> generate constructor, ha máshogy kell -> google: c# konstruktorok (csharptutorial.hu)
+
+
+------------------2. grafikus------------------
+
+--- adatbázis felhasználása/létrehozása:
+string connentionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=dbname;";
+            MySqlConnection databaseConnection = new MySqlConnection(connentionString);
+            databaseConnection.Open();
+            string query = "SELECT * FROM dbname;"; //ide amit szeretnénk kiválasztani
+            MySqlCommand myadat = new MySqlCommand(query, databaseConnection);
+            MySqlDataReader reader = myadat.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string seged = reader.GetString(1);
+                    seged += "\t" + reader.GetString(2);
+                    seged += "\t" + reader.GetString(3);
+                    combobox_nev.Items.Add(seged);
+		    //vagy lb_adat.Items.Add(reader.GetString(0));
+                }
+            }
+            databaseConnection.Close();
+
+
+---osztály létrehozása OOP-hoz
+public class User
+{
+    public int Id { get; set; }
+    public string Username { get; set; }
+    public string Password { get; set; }
+
+    // Egyéb tulajdonságok, metódusok stb.
+}
+
+
+
+---hozzá tartozó lista
+List<User> users = new List<User>();
+
+string selectQuery = "SELECT * FROM users";
+using (MySqlCommand command = new MySqlCommand(selectQuery, connection))
+{
+    using (MySqlDataReader reader = command.ExecuteReader())
+    {
+        while (reader.Read())
+        {
+            User user = new User();
+            user.Id = Convert.ToInt32(reader["id"]);
+            user.Username = reader["username"].ToString();
+            user.Password = reader["password"].ToString();
+
+            users.Add(user);
+        }
+    }
+}
+
+
+
+---felület létrehozása, keresni, szűrni, eltávolítani, hozzáadni, szerkeszteni lehessen
+
+---új ablak gombra kattintással
+private void btn_hozzaadas_Click(object sender, RoutedEventArgs e)
+        {
+            hozzaadas ablak = new hozzaadas();
+            ablak.ShowDialog();
+        }
+
+---mégsem, alaphelyzet, gombok funkciói
+mégsem = private void btn_megsem_Click(object sender, RoutedEventArgs e){txt_adat.Text.Clear()}
+
+------------------BACKEND------------------
+database -> migrations -> ...create_books_table
+Schema::create('books', function (Bluerint $table){
+	$table->id();
+	$table->string('title');
+	$table->integer('pages');
+	$table->date('publi_date');
+	$table->timestamps();
+}
+-----------------
+app->models->Books.php
+class Books extends Model
+{
+use HasFactory;
+protected $fillable = ['title','pages','public_date'];
+}
+-----------------
+http->controllers->api->BooksController.php
+public function index(): array
+{
+    $books = Books::all();
+    return [
+        "status" => 1,
+        "data" => $books,
+    ];
+}
+
+public function store(BooksRequest $request): array
+{
+    $request->validate([
+        'title' => 'required',
+        'pages' => 'required',
+        'public_date' => 'required',
+    ], [
+        'title.required' => 'Please provide a title.',
+    ]);
+
+    $boo = Book::create($request->all());
+    return [
+        "status" => 1,
+        "data" => $boo,
+        "msg" => "Book created successfully",
+    ];
+}
+
+public function show(Book $book): array
+{
+    return [
+        "status" => 1,
+        "data" => $book,
+    ];
+}
+
+public function update(BooksRequest $request, Book $book): array
+{
+    $request->validate([
+        'title' => 'required',
+        'pages' => 'required',
+        'public_date' => 'required',
+    ]);
+
+    $book->update($request->all());
+    return [
+        "status" => 1,
+        "data" => $book,
+        "msg" => "Book updated",
+    ];
+}
+
+public function destroy(Book $book): array
+{
+    $book->delete();
+    return [
+        "status" => 1,
+        "msg" => "Book deleted",
+    ];
+}
+-----------------
+routes->api.php
+Route::middleware('auth:sanctum')->get('/user', function (Request $request){
+	return $request->user();
+});
+Route::resource('books',BooksController::class);
+
+------------------RESPO------------------
+- Új háttér
+body {
+    background-image: url("bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+-JK
+.jk {
+    border: 2px solid #1a1e21;
+    box-shadow: 0 0 2px #1ale21;
+}
+
+-Útvonalak helyes beállítása
+<ul class="navigation">
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="products.html">Products</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+-Képek osztálykijelölővel
+<div class="card">
+  <img src="jkr.jpg" alt="JKR" class="img-fluid jkr">
+  <div class="card-content">
+    <h3>About</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <a href="about.html">Learn More</a>
+  </div>
+</div>
+
+<div class="card">
+  <img src="wizard_world.jpg" alt="Wizard World" class="img-fluid jkr">
+  <div class="card-content">
+    <h3>Products</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <a href="products.html">View Products</a>
+  </div>
+</div>
+
+
+-Oszlopok átméretezése
+<div class="row">
+  <div class="col-md-6">
+    <!-- Első oszlop tartalma -->
+  </div>
+  <div class="col-md-6">
+    <!-- Második oszlop tartalma -->
+  </div>
+</div>
+
+-Táblázas görgethető és közép
+table {
+  overflow-x: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+-CSS fájl hozzáadása:
+<link rel="stylesheet" href="style.css">
+
+
+------------------Laravel telepítés------------------
+composer global require laravel/installer
+composer create-project --prefer-dist laravel/laravel:^7.0 blog
+php artisan migrate
+php artisan serve
+
+------------------React telepítés------------------
+cd react
+npm install
+npm install axios
+npm run dev
