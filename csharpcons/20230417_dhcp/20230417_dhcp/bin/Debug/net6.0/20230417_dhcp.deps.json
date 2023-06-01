@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "20230417_dhcp/1.0.0": {
+        "runtime": {
+          "20230417_dhcp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "20230417_dhcp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+D:\Szabo_Adam\20220914\20230329_morze\bin\Debug\net6.0\20230329_morze.exe
+D:\Szabo_Adam\20220914\20230329_morze\bin\Debug\net6.0\20230329_morze.deps.json
+D:\Szabo_Adam\20220914\20230329_morze\bin\Debug\net6.0\20230329_morze.runtimeconfig.json
+D:\Szabo_Adam\20220914\20230329_morze\bin\Debug\net6.0\20230329_morze.dll
+D:\Szabo_Adam\20220914\20230329_morze\bin\Debug\net6.0\20230329_morze.pdb
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.csproj.AssemblyReference.cache
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.GeneratedMSBuildEditorConfig.editorconfig
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.AssemblyInfoInputs.cache
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.AssemblyInfo.cs
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.csproj.CoreCompileInputs.cache
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.dll
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\refint\20230329_morze.dll
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.pdb
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\20230329_morze.genruntimeconfig.cache
+D:\Szabo_Adam\20220914\20230329_morze\obj\Debug\net6.0\ref\20230329_morze.dll

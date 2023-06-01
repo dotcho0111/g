@@ -1,0 +1,16 @@
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\bin\Debug\20230316_graf.exe.config
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\bin\Debug\20230316_graf.exe
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\bin\Debug\20230316_graf.pdb
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.csproj.AssemblyReference.cache
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.csproj.SuggestedBindingRedirects.cache
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\MainWindow.g.cs
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\App.g.cs
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf_MarkupCompile.cache
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf_MarkupCompile.lref
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\MainWindow.baml
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.g.resources
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\_20230316_graf.Properties.Resources.resources
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.csproj.GenerateResource.cache
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.csproj.CoreCompileInputs.cache
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.exe
+C:\Users\Adam\source\repos\20230316_graf\20230316_graf\obj\Debug\20230316_graf.pdb

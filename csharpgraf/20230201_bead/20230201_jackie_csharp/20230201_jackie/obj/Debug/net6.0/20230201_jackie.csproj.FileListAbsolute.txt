@@ -1,0 +1,15 @@
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.csproj.AssemblyReference.cache
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.AssemblyInfoInputs.cache
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.AssemblyInfo.cs
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.csproj.CoreCompileInputs.cache
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\bin\Debug\net6.0\20230201_jackie.exe
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\bin\Debug\net6.0\20230201_jackie.deps.json
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\bin\Debug\net6.0\20230201_jackie.runtimeconfig.json
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\bin\Debug\net6.0\20230201_jackie.dll
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\bin\Debug\net6.0\20230201_jackie.pdb
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.dll
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\refint\20230201_jackie.dll
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.pdb
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\20230201_jackie.genruntimeconfig.cache
+C:\Users\Adam\source\repos\20230201_jackie\20230201_jackie\obj\Debug\net6.0\ref\20230201_jackie.dll

@@ -1,0 +1,15 @@
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\bin\Debug\net6.0\20230417_dhcp.exe
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\bin\Debug\net6.0\20230417_dhcp.deps.json
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\bin\Debug\net6.0\20230417_dhcp.runtimeconfig.json
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\bin\Debug\net6.0\20230417_dhcp.dll
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\bin\Debug\net6.0\20230417_dhcp.pdb
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.csproj.AssemblyReference.cache
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.AssemblyInfoInputs.cache
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.AssemblyInfo.cs
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.csproj.CoreCompileInputs.cache
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.dll
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\refint\20230417_dhcp.dll
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.pdb
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\20230417_dhcp.genruntimeconfig.cache
+D:\Szabo_Adam\20220914\20230417_dhcp\20230417_dhcp\obj\Debug\net6.0\ref\20230417_dhcp.dll
